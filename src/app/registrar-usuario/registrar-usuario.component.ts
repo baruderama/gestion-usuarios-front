@@ -23,7 +23,7 @@ export class RegistrarUsuarioComponent implements OnInit {
     const password = this.usuario.password;
     const secretKey = 'mi_clave_secreta';
 
-    const encryptedPassword = CryptoJS.AES.encrypt(password, secretKey).toString();\
+    const encryptedPassword = CryptoJS.AES.encrypt(password, secretKey).toString();
     this.usuario["password"]=encryptedPassword;
 
     this.usuarioService.guardarUsuario(this.usuario).subscribe(dato =>{
